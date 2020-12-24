@@ -2,6 +2,8 @@ package com.revature.models;
 
 public class User {
 
+	private int userId;
+	
 	private String username;
 	
 	private String password;
@@ -10,19 +12,40 @@ public class User {
 	
 	private String lastName;
 	
-	private int userId;
+	private String email;
+	
+	private int roleId;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+
+	
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public User(String username, String password, String firstName, String lastName, int userId) {
+	public User(int userId, String username, String password, String firstName, String lastName, String email, int roleId) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.email = email;
+		this.roleId = roleId;
 		this.userId = userId;
 	}
 
@@ -69,16 +92,18 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", userId=" + userId + "]";
+				+ lastName + ", email=" + email + ", roleId=" + roleId + ", userId=" + userId + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + roleId;
 		result = prime * result + userId;
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
@@ -93,6 +118,11 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
 		if (firstName == null) {
 			if (other.firstName != null)
 				return false;
@@ -107,6 +137,8 @@ public class User {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
+			return false;
+		if (roleId != other.roleId)
 			return false;
 		if (userId != other.userId)
 			return false;

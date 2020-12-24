@@ -20,11 +20,10 @@ public class AuthServlet extends HttpServlet{
 		static List<User> allUsers = new ArrayList<User>();
 		
 		static {
-			allUsers.add(new User("AB", "password", "alec", "Batson", 1));
-			allUsers.add(new User("AC", "password", "alec", "Catson", 2));
-			allUsers.add(new User("AD", "password", "alec", "Datson", 3));
+			allUsers.add(new User(1, "AB", "a", "alec", "Batson", "ba@aa.aa", 1));
+			allUsers.add(new User(2, "AC", "a", "alec", "Catson", "ca@aa.aa", 1));
+			allUsers.add(new User(3, "AD", "a", "alec", "Datson", "da@aa.aa", 2));
 		}
-		
 		
 		ObjectMapper om = new ObjectMapper();
 		

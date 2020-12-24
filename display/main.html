@@ -18,19 +18,16 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
-          
           <form class="form-container">
             <h1>SIGN IN</h1>
             <div class="form-group">
               <label for="userId">User ID</label>
               <input id="userId" type="text" class="form-control"  placeholder="User ID">
-              <!-- If I change type to text, it's not going to direct the page. why...?-->
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
-           
             <div class="checkbox">
               <label>
                 <input type="checkbox"> Remember me
@@ -38,7 +35,8 @@
             </div>
 
             <div class="col-md-6">
-            <button id="logbtn" type="submit" class="btn btn-warning btn-block" >Login</button>
+            <!--button id="logbtn" type="submit" class="btn btn-warning btn-block" onClick="redirectPage()">Login</!--button-->
+            <button id="logbtn" type="submit" class="btn btn-warning btn-block">Login</button>
             </div>
             <div class="col-md-6">
               <button id="regbtn" type="submit" class="btn btn-success btn-block" onclick="location.href='logReg/registerDisp.html'">Register</button>

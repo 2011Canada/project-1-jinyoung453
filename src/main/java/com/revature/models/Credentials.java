@@ -1,8 +1,8 @@
 package com.revature.models;
 
 public class Credentials {
-private String username;
 	
+	private String username;
 	private String Password;
 
 	public Credentials() {
