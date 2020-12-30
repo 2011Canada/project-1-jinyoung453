@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>REIMBURSEMENT SYSTEM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- navbar stylesheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../employee/emp.css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+      <div class="wrapper wrapper--w900">
+          <div class="card card-6">
+              <div class="card-heading">
+                  <h2 class="title">REGISTRATION</h2>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="form-row">
+                    <div class="name">User ID</div>
+                    <div class="value">
+                        <input class="input--style-6" type="text" id="userId" placeholder="User ID" required>
+                    </div>
+                    <div class="name">Password</div>
+                    <div class="value">
+                        <input class="input--style-6" type="text" id="password" placeholder="Password" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="name">First Name</div>
+                    <div class="value">
+                        <input class="input--style-6" type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="name">Last Name</div>
+                    <div class="value">
+                        <input class="input--style-6" type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="name">Email Address</div>
+                    <div class="value">
+                        <input class="input--style-6" type="text" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="name">Position</div>
+                    <div class="value">
+                      <select class="input--style-6" id="position" style="height: 38px; width: 210px">
+                        <option value='1'>Finance Manager</option>
+                        <option value='2' selected>Employee</option>
+                      </select>
+                    </div>
+                    <div class="card-footer">
+                      <button id="submitBtn" type="submit" class="btn btn-lg btn-success" >Submit</button>	
+                      <button id="cancelBtn" type="button" class="btn btn-lg btn-danger" onclick="location.href='../login.html'">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+
+<!-- 
+
+                    <div class="row">
+                      <div class="col-sm-6 form-group">
+                        <label>User ID</label>
+                        <input id="userId" type="text" placeholder="User ID" class="form-control" required>
+                      </div>
+                      <div class="col-sm-6 form-group">
+                        <label>Password</label>
+                        <input id="password" type="text" placeholder="Password" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6 form-group">
+                        <label>First Name</label>
+                        <input id="firstName" type="text" placeholder="First Name" class="form-control" required>
+                      </div>
+                      <div class="col-sm-6 form-group">
+                        <label>Last Name</label>
+                        <input id="lastName" type="text" placeholder="Last Name" class="form-control" required>
+                      </div>
+                    </div>	
+                    <div class="row">
+                      <div class="col-sm-6 form-group">
+                        <label>Email Address</label>
+                        <input id="email" type="text" placeholder="Email Address" class="form-control">
+                      </div>
+                      <div class="col-sm-6 form-group">
+                        <label>Position</label>
+                        <select id="position" class="form-control">
+                          <option value='1'>Finance Manager</option>
+                          <option value='2' selected>Employee</option>
+                        </select>
+                      </div>
+                    </div>	
+                  <button id="submitBtn" type="submit" class="btn btn-lg btn-success" style="margin-top: 20px">Submit</button>	
+                  <button type="button" class="btn btn-lg btn-danger" style="margin-top: 20px" onclick="location.href='../login.html'">Cancel</button>					
+                  </div>
+                </form>  -->
+          </div>
+      </div>
+  </div>
+
+  <!-- Main JS-->
+  <script src="register.js"></script>
+  </body>
+</html>

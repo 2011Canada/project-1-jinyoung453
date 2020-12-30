@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>REIMBURSEMENT SYSTEM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- navbar stylesheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="emp.css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body onload="approverList()">
+    <nav style="margin-bottom: 1px;" class="navbar navbar-inverse navbar fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a id="empHome" class="navbar-brand" href="empMain.html"> EMPLOYEE </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a id="newReimbursement" href="#">New Reimbursement</a></li>
+          <li><a id="history" href="history.html">History</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+      <div class="wrapper wrapper--w900">
+          <div class="card card-6">
+              <div class="card-heading">
+                  <h2 class="title">NEW REIMBURSEMENT</h2>
+              </div>
+              <div class="card-body">
+                  <form method="post" action="multiPartServlet" enctype="multipart/form-data">
+                      <div class="form-row">
+                        <div class="name">Type</div>
+                            <div class="value">
+                                <select class="input--style-6" id="type" style="height: 38px; width: 210px">
+                                <option value='1'>LODGING</option>
+                                <option value='2'>TRAVEL</option>
+                                <option value='3'>FOOD</option>
+                                <option value='4'>OTHER</option>
+                                </select>
+                            </div>
+                        <div class="name">Amount</div>
+                        <div class="value">
+                            <input class="input--style-6" type="text" id="amount" name="amount" placeholder="CAD" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="name">Approver</div>
+                            <div class="value" >
+                                <select class="input--style-6" id="approver" style="height: 38px; width: 210px" >
+                                <!-- <option value='1'>LODGING</option>
+                                <option value='2'>TRAVEL</option>
+                                <option value='3'>FOOD</option>
+                                <option value='4'>OTHER</option> -->
+                                </select>
+                            </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="name">Description</div>
+                          <div class="value">
+                              <div class="input-group">
+                                  <textarea class="textarea--style-6" id="description" name="description" placeholder="Additional Information"></textarea>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="name">Upload Recipt</div>
+                          <div class="value">
+                              <div class="input-group js-input-file">
+                                  <input class="input--file" type="file" name="file_cv" id="file">
+                              </div>
+                              <div class="label--desc">Upload your Recipt or any other relevant file.</div>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                        <button type="submit" id="newReimbBtn" onclick="newReimbursement()" class="btn btn--radius-2 btn--blue-2">Submit</button>
+                    </div>
+                  </form>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+
+  <!-- Main JS-->
+  <script src="employee.js"></script>
+  </body>
+</html>

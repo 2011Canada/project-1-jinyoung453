@@ -15,11 +15,14 @@
   </head>
   <body>
     <div class="container-fluid bg">
+     
       <div class="row">
+        <div id="title">EXPENSE REIMBURSEMENT SYSTEM</div>
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
+          
           <form class="form-container">
-            <h1>SIGN IN</h1>
+            <h2 style="margin-top:10px; margin-bottom: 18px;">SIGN IN</h2>
             <div class="form-group">
               <label for="userId">User ID</label>
               <input id="userId" type="text" class="form-control"  placeholder="User ID">
@@ -28,18 +31,14 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-            </div>
+           
 
             <div class="col-md-6">
             <!--button id="logbtn" type="submit" class="btn btn-warning btn-block" onClick="redirectPage()">Login</!--button-->
-            <button id="logbtn" type="submit" class="btn btn-warning btn-block">Login</button>
+            <button id="logbtn" type="submit" class="btn btn-warning btn-block" style="font-weight: bold;">Login</button>
             </div>
             <div class="col-md-6">
-              <button id="regbtn" type="submit" class="btn btn-success btn-block" onclick="location.href='logReg/registerDisp.html'">Register</button>
+              <button id="regbtn" type="submit" class="btn btn-success btn-block" style="font-weight: bold;" onclick="location.href='logReg/register.html'">Register</button>
             </div>
           </form>
 
@@ -48,6 +47,5 @@
       </div>
     </div>
     <script src="logReg/login.js"></script>
-    <script src="logReg/register.js"></script>
   </body>
 </html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>REIMBURSEMENT SYSTEM</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="fm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body onload="viewReimbursement()">
+    <nav class="navbar navbar-inverse navbar fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a id="financeHome" class="navbar-brand" href="fmMain.html"> FINANCE MANAGER </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li id="viewReimbursement"><a href="#">View Reimbursement</a></li>
+          <li id="approval"><a href="approval.html">Approval</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <span> STATUS:</span> 
+    <select id="status" onchange=OnSelectionChange(this)>
+        <option value="0" selected>All</option>
+        <option id="pending" value="1">Pending</option>
+        <option id="approved" value="2">Approved</option>
+        <option id="denied" value="3">Denied</option>
+    </select>
+    <div id="fmBody"></div>
+
+    </div>
+    <script src="financeManager.js"></script>
+  </body>
+
+</html>

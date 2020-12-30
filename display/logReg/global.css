@@ -7,6 +7,17 @@
 
 .form-container{
     border:1px solid;
-    padding:20px 50px 65px;
-    margin-top:20vh;
+    padding:20px 50px 80px;
+    margin-top:20px;
+}
+
+.col-md-6 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#title{
+    margin-top: 30px;
+    font-size:3em;
+    text-align: center;
 }

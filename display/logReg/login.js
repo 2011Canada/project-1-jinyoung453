@@ -12,11 +12,14 @@
 
 
 function redirectPage(user){
+    
+     sessionStorage.setItem("userInfo", JSON.stringify(user))
+
      var roldId = user.roleId;
      if(roldId == 1){
-          location.href='employee/empDisp.html'
+          location.href='financeManager/fmMain.html'
      } else{
-          location.href='financeManager/fmDisp.html'
+          location.href='employee/empMain.html'
      }
 }
 
@@ -32,26 +35,21 @@ async function loginSubmit(e) {
      }
 
      try{
-          let res = await fetch("http://localhost:8080/Servlet/login",{
+          let res = await fetch("http://localhost:8080/Project1/login",{
                method:"POST",
                body: JSON.stringify(credentials),
                headers:{
                     "Content-Type" : "application/json"
                }
           })
+          console.log(res);
+          //******************************* */
+          // should validate if UserID is exist
 
           let user = await res.json()
           console.log(user);
-          /*
-               email: "ba@aa.aa"
-               firstName: "alec"
-               lastName: "Batson"
-               password: "a"
-               roleId: 1
-               userId: 1
-               username: "AB"
-          */
           redirectPage(user);
+          
      }catch(e){
           console.log(e);
      }
