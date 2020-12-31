@@ -5,6 +5,8 @@ document.getElementById('empHome').addEventListener('click',empHome)
 document.getElementById('history').addEventListener('click',viewHistory)
 
 function empHome(){
+    if(userInfo == null)  location.href = '../login.html'
+
     let roleName;
     if(userInfo.roleId == 1){
         roleName = "Finance Manager"
@@ -23,6 +25,7 @@ function empHome(){
 }
 
 async function viewHistory(){
+    if(userInfo == null)  location.href = '../login.html'
     //alert("history")
     try{
         var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
@@ -73,7 +76,7 @@ async function viewHistory(){
 
 
 async function OnSelectionChange(opt){
-
+   
     if(opt.value == 0){
         viewHistory()
     }else{
@@ -127,8 +130,7 @@ async function OnSelectionChange(opt){
 
 
 function newReimbursement(e){
-    //alert("newReimbursement")
-    //preventDefault();
+    if(userInfo == null)  location.href = '../login.html'
 
     let amount = document.getElementById("amount").value;
     let desc = document.getElementById("description").value;
@@ -160,6 +162,7 @@ function newReimbursement(e){
 }
 
 function approverList(){
+    if(userInfo == null)  location.href = '../login.html'
     try{
         var optionList = ""
         fetch("http://localhost:8080/Project1/approver/"+ userInfo.departmentId)
