@@ -139,21 +139,23 @@ function newReimbursement(e){
 
     const reimb = {
         amount, desc, author, resolver, type, receipt
-   }
+    }
+    
+    if(confirm("IS INFORMATION CORRECT?")){
+        try{
+            fetch("http://localhost:8080/Project1/newReimb",{
+                method:"PUT",
+                body: JSON.stringify(reimb),
+                headers:{
+                    "Content-Type" : "application/json"
+                }
+        })
+        alert("NEW REIMBURSEMENT WAS SUCCESSFULLY SUBMITTED")    
+        window.location.href='./history.html'
 
-    try{
-        fetch("http://localhost:8080/Project1/newReimb",{
-            method:"PUT",
-            body: JSON.stringify(reimb),
-            headers:{
-                 "Content-Type" : "application/json"
-            }
-       })
-    alert("NEW REIMBURSEMENT WAS SUCCESSFULLY SUBMITTED")    
-    window.location.href='./history.html'
-
-    }catch(e){
-         console.log(e);
+        }catch(e){
+            console.log(e);
+        }
     }
 }
 
@@ -174,3 +176,6 @@ function approverList(){
     }
 }
 
+async function SSclear(){
+    sessionStorage.clear();
+}

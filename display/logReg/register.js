@@ -16,20 +16,30 @@ async function register(e){
         email, roleId, departmentId
    }
 
-    try{
-        await fetch("http://localhost:8080/Project1/register",{
-            method:"PUT",
-            body: JSON.stringify(user),
-            headers:{
-                 "Content-Type" : "application/json"
-            }
-       })
-    alert("YOUR ACCOUNT WAS SUCCESSFULLY CREATED")    
-    location.href='../login.html'
+   if(confirm("IS YOUR INFORMATION CORRECT?")){
+     try{
+          await fetch("http://localhost:8080/Project1/register",{
+              method:"PUT",
+              body: JSON.stringify(user),
+              headers:{
+                   "Content-Type" : "application/json"
+              }
+         })
+      //alert("YOUR ACCOUNT WAS SUCCESSFULLY CREATED")    
+      location.href='../login.html'
+  
+      }catch(e){
+           console.log(e);
+      }
+   }
 
-    }catch(e){
-         console.log(e);
-    }
+    
+}
+
+async function validation(user){
+    
 }
 
 document.getElementsByTagName("form")[0].addEventListener('submit',register)
+
+

@@ -11,10 +11,10 @@
   </head>
 
   <body onload="viewAllReimbursement()">
-    <nav class="navbar navbar-inverse navbar fixed-top">
+    <nav class="navbar navbar-inverse navbar fixed-top" style="font-size: 18px;">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a id="financeHome" class="navbar-brand" href="fmMain.html"> MANAGER </a>
+          <a id="financeHome" class="navbar-brand" href="fmMain.html" style="font-size: 21px;"> MANAGER </a>
         </div>
         <ul class="nav navbar-nav">
           <li id="viewReimbursement"><a href="viewReimbursement.html" >View Reimbursement</a></li>
@@ -22,7 +22,7 @@
           <li id="approval"><a href="approval.html">Approval</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="../login.html" onclick="SSclear()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -34,8 +34,6 @@
         <option id="denied" value="3">Denied</option>
     </select>
     <div id="fmBody"></div>
-
-    </div>
     <script src="financeManager.js"></script>
   </body>
   <div class="fixed-bottom">Copyright &copy; Project1 2020 </div>

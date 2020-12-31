@@ -1,3 +1,8 @@
+nav > a:hover{
+  background-color: yellow;
+  color:yellow;
+}
+
 #empBody{
   margin: 5vh 10vh;
 }
@@ -14,14 +19,30 @@ span{
 
 #submitBtn{
   margin-right: 15px;
+  background-color: black;
+  border-color: black;
+  
+}
+
+#cancelBtn{
+  background-color: gray;
+  border-color: gray;
 }
 #submitBtn, #cancelBtn{
   margin-top: 40px;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 #newReimbBtn{
-  margin: 20px 55px 20px;
+  margin: 18px 15px 20px 55px;
+  background-color: black;
+  border-color: black;
+}
+#newReimbCancelBtn{
+margin-top: 0px;
+  background-color: gray;
+  border-color: gray;
 }
 
 .fixed-bottom {
@@ -114,7 +135,7 @@ span{
     -moz-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    padding: 18px 55px;
+    padding: 14px 55px;
     border-bottom: 1px solid #e5e5e5;
   }
   
@@ -717,7 +738,7 @@ span{
   
   .card-6 .card-footer {
     background:  #f1f1f1;
-    border: 1px solid #e5e5e5;
+   /*border: 1px solid #e5e5e5;*/
     border-top: none;
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-radius-bottomleft: 3px;

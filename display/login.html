@@ -7,43 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="logReg/global.css">
-  
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
   <body>
-    <div class="container-fluid bg">
-     
-      <div class="row">
-        <div id="title">EXPENSE REIMBURSEMENT SYSTEM</div>
-        <div class="col-md-4 col-sm-4 col-xs-12"></div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-          
-          <form class="form-container">
-            <h2 style="margin-top:10px; margin-bottom: 18px;">SIGN IN</h2>
-            <div class="form-group">
-              <label for="userId">User ID</label>
-              <input id="userId" type="text" class="form-control"  placeholder="User ID">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-           
-
-            <div class="col-md-6">
-            <!--button id="logbtn" type="submit" class="btn btn-warning btn-block" onClick="redirectPage()">Login</!--button-->
-            <button id="logbtn" type="submit" class="btn btn-warning btn-block" style="font-weight: bold;">Login</button>
-            </div>
-            <div class="col-md-6">
-              <button id="regbtn" type="submit" class="btn btn-success btn-block" style="font-weight: bold;" onclick="location.href='logReg/register.html'">Register</button>
-            </div>
-          </form>
-
+    <div class="sidenav">
+      <div class="login-main-text">
+        <h2 style="font-weight: bold;">EXPENSE<br> REIMBERSEMENT <br> SYSTEM</h2>
+        <p>Login or register from here to access.</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form>
+              <div class="form-group">
+                <label for="userId">User ID</label>
+                  <input id="userId" type="text" class="form-control" placeholder="User ID">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                  <input id="password" type="password" class="form-control" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-black" style="font-weight: bold;">Login</button>
+              <button type="button" class="btn btn-secondary" style="font-weight: bold;" onclick="location.href='logReg/register.html'">Register</button>
+            </form>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12"></div>
       </div>
     </div>
     <script src="logReg/login.js"></script>

@@ -1,15 +1,4 @@
 
-// document.getElementById('logbtn').addEventListener("click",() => {
-//      console.log("logbtn");
-//     var userId = document.getElementById('userId').value;
-//     if(userId == 'AB'){
-//         location.href='employee/empDisp.html'
-//    } else if(userId == 'f'){
-//         location.href='financeManager/fmDisp.html'
-//    };
-// });
-
-
 
 function redirectPage(user){
     
@@ -42,15 +31,13 @@ async function loginSubmit(e) {
                     "Content-Type" : "application/json"
                }
           })
-          console.log(res);
-          //******************************* */
-          // should validate if UserID is exist
 
           let user = await res.json()
-          console.log(user);
           redirectPage(user);
           
      }catch(e){
+          alert("USER DOES NOT EXIST OR PASSWORD IS NOT CORRECT")
+          location.href='login.html'
           console.log(e);
      }
 }

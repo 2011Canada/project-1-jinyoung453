@@ -231,8 +231,8 @@ async function viewPendingList(id){
 
     try{
             if(id == 0) id="";
-            if(id == undefined) id = userInfo.userId;
-
+            if(id == undefined || id == null) id = userInfo.userId;
+            //alert("id: " + id);
             fetch("http://localhost:8080/Project1/reimb/" +id +"1")
             .then(response => {return response.json()})
             .then(data =>{
@@ -256,8 +256,8 @@ async function viewPendingList(id){
                                 + "<td>$" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                 + "<td>" + data[x].desc + "</td><td>" + data[x].receipt + "</td>"
                                 + "<td>" + data[x].submit + "</td><td>" + data[x].statusName +"</td><td>" + data[x].resolverName + "</td>"
-                                + "<td id=\"row_"+ x + "\"><button onclick=\"approval("+ data[x].id + "," +2+","+x+")\" class=\"btn btn-lg btn-success\" style=\"margin-right:2vh; height:43px\">Approve</button>"
-                                + "<button onclick=\"approval("+ data[x].id + "," +3+","+x+")\" class=\"btn btn-lg btn-danger\" style=\"height:43px\">Reject</button></td></span>"
+                                + "<td id=\"row_"+ x + "\"><button onclick=\"approval("+ data[x].id + "," +2+","+x+")\" class=\"btn btn-lg btn-success\" style=\"font-size: 15px; font-weight: bold; margin-right:2vh; height:37px; width:80px; text-align:center; padding:0\">Approve</button>"
+                                + "<button onclick=\"approval("+ data[x].id + "," +3+","+x+")\" class=\"btn btn-lg btn-danger\" style=\"font-size: 15px; font-weight: bold; height:37px; width:80px; text-align:center; padding:0\">Reject</button></td></span>"
                                 + "</tr>"
                     }
                     newTable += "</tbody></table>"
@@ -287,27 +287,6 @@ function approval(reimbId, statusId, rowNum){
     }
 }
 
-
-/*
-async function userList(){
-    try{
-        
-        var newTable = "<table><tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Email</th></tr>"
-         fetch("http://localhost:8080/Project1/users")
-         .then(response => {return response.json()})
-         .then(user =>{
-             
-            for(let x = 0;x<user.length;x++){
-                newTable += "<tr><td>" + user[x].username + "</td><td>" + user[x].firstName + "</td><td>" + user[x].lastName + "</td><td>" + user[x].email + "</td></tr>"
-            }
-            newTable += "</table>"
-            document.getElementById('fmBody').innerHTML = newTable;
-         })
-         
-        
-    }catch(e){
-         console.log(e);
-    }
+async function SSclear(){
+    sessionStorage.clear();
 }
-
-*/

@@ -12,17 +12,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body onload="approverList()">
-    <nav style="margin-bottom: 1px;" class="navbar navbar-inverse navbar fixed-top">
-      <div class="container-fluid">
+    <nav style="margin-bottom: 1px;" class="navbar navbar-inverse navbar fixed-top" >
+      <div class="container-fluid" style="font-size: 18px;">
         <div class="navbar-header">
-          <a id="empHome" class="navbar-brand" href="empMain.html"> EMPLOYEE </a>
+          <a id="empHome" class="navbar-brand" href="empMain.html" style="font-size: 21px;"> EMPLOYEE </a>
         </div>
         <ul class="nav navbar-nav">
           <li><a id="newReimbursement" href="#">New Reimbursement</a></li>
           <li><a id="history" href="history.html">History</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="../login.html" onclick="SSclear()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -30,7 +30,7 @@
       <div class="wrapper wrapper--w900">
           <div class="card card-6">
               <div class="card-heading">
-                  <h2 class="title">NEW REIMBURSEMENT</h2>
+                <h2 style="font-weight: 600;" class="title">NEW REIMBURSEMENT</h2>
               </div>
               <div class="card-body">
                   <form method="post" action="multiPartServlet" enctype="multipart/form-data">
@@ -73,8 +73,9 @@
                       </div>
                   </form>
                   <div class="card-footer">
-                    <button type="submit" id="newReimbBtn" onclick="newReimbursement()" class="btn btn--radius-2 btn--blue-2">Submit</button>
-                </div>
+                    <button type="submit" id="newReimbBtn" onclick="newReimbursement()" class="btn btn-lg btn-success">Submit</button>
+                    <button id="newReimbCancelBtn" type="button" class="btn btn-lg btn-danger" onclick="location.href='empMain.html'">Cancel</button>
+                  </div>
               </div>
               
           </div>
