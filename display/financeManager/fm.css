@@ -11,3 +11,18 @@ span{
     margin: 0 0 0 10vh ;
     font-weight: bold;
 }
+
+
+.fixed-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: #f1f1f1;
+    font-size:16px;
+    text-align: center;
+    padding-top: 10px;
+    
+  }

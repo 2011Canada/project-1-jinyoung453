@@ -8,11 +8,12 @@ async function register(e){
     let lastName = document.getElementById("lastName").value;
     let email = document.getElementById("email").value;
     let roleId = document.getElementById("position").value;
+    let departmentId = document.getElementById("department").value;
 
     const user = {
         username, password, 
         firstName, lastName,
-        email, roleId
+        email, roleId, departmentId
    }
 
     try{

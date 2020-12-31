@@ -9,6 +9,7 @@ import com.revature.models.User;
 
 public interface ReimbService {
 
+	public List<Reimburse> getAllReimburse();
 	public List<Reimburse> getAllReimburse(int resolverId);
 	public List<Reimburse> getReimburseByStatus(int complexId);
 	public List<Reimburse> getReimburseByAuthor(int author);

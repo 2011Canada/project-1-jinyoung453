@@ -19,8 +19,54 @@ public class ReimbPostgresDao implements ReimbDao {
 	
 	private ConnectionFactory cf = ConnectionFactory.getConnectionFactory();
 
+	public List<Reimburse> findAllReimburse() { 
+		Connection conn = cf.getConnection();
+		try {
+			String sql = "select er.*,"
+					+ "(select eu.user_first_name || '  ' || eu.user_last_name from ers_users eu where er.reimb_author = eu.ers_users_id) as REIMB_AUTHOR_NAME,"
+					+ "(select eu.user_first_name || '  ' || eu.user_last_name from ers_users eu where er.reimb_resolver = eu.ers_users_id) as REIMB_RESOLVER_NAME,"
+					+ "(select ert.reimb_type from ers_reimbursement_type ert where er.reimb_type_id = ert.reimb_type_id) as REIMB_TYPE,"
+					+ "(select ers.reimb_status from ers_reimbursement_status ers where er.reimb_status_id = ers.reimb_status_id) as REIMB_STATUS"
+					+ " from ers_reimbursement er order by er.reimb_id desc;";
+			
+			PreparedStatement getReimburse = conn.prepareStatement(sql);
+			
+			ResultSet res = getReimburse.executeQuery();
+			List<Reimburse> allReimburse = new ArrayList<Reimburse>();
+			while(res.next()) {
+				Reimburse r = new Reimburse();
+				r.setId(res.getInt("REIMB_ID"));
+				r.setAmount(res.getDouble("REIMB_AMOUNT"));
+				r.setSubmit(res.getString("REIMB_SUBMITTED"));
+				r.setApprove(res.getString("REIMB_RESOLVED"));
+				r.setDesc(res.getString("REIMB_DESCRIPTION"));
+				r.setReceipt(res.getString("REIMB_RECEIPT"));
+				r.setAuthor(res.getInt("REIMB_AUTHOR"));
+				r.setResolver(res.getInt("REIMB_RESOLVER"));
+				r.setStatus(res.getInt("REIMB_STATUS_ID"));
+				r.setType(res.getInt("REIMB_TYPE_ID"));
+				r.setAuthorName(res.getString("REIMB_AUTHOR_NAME"));
+				if(res.getString("REIMB_RESOLVER_NAME")==null || res.getString("REIMB_RESOLVER_NAME").equals("")) {
+					r.setResolverName("-");
+				}else {
+					r.setResolverName(res.getString("REIMB_RESOLVER_NAME"));
+				}
+				r.setStatusName(res.getString("REIMB_STATUS"));
+				r.setTypeName(res.getString("REIMB_TYPE"));
+				allReimburse.add(r);
+			}
+			return allReimburse;
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new InternalErrorException();
+		} finally {
+			cf.releaseConnection(conn);
+		}
+	}
+	
 	public List<Reimburse> findAllReimburse(int id) { //resolverId
-		System.out.println("findAllReimburse_id: " + id);
+		//System.out.println("findAllReimburse_id: " + id);
 		Connection conn = cf.getConnection();
 		try {
 			String sql = "select er.*,"
@@ -70,6 +116,7 @@ public class ReimbPostgresDao implements ReimbDao {
 	public List<Reimburse> findReimburseByStatus(int complexId) {
 		int statusId = complexId % 10;
 		int userId = complexId / 10;
+		System.out.println("userId : " + userId);
 		Connection conn = cf.getConnection();
 		try {
 			String sql = "select er.*,"
@@ -77,8 +124,17 @@ public class ReimbPostgresDao implements ReimbDao {
 					+ "(select eu.user_first_name || '  ' || eu.user_last_name from ers_users eu where er.reimb_resolver = eu.ers_users_id) as REIMB_RESOLVER_NAME,"
 					+ "(select ert.reimb_type from ers_reimbursement_type ert where er.reimb_type_id = ert.reimb_type_id) as REIMB_TYPE,"
 					+ "(select ers.reimb_status from ers_reimbursement_status ers where er.reimb_status_id = ers.reimb_status_id) as REIMB_STATUS"
-					+ " from ers_reimbursement er"
-					+ " where er.reimb_status_id=" + statusId + " and er.reimb_resolver=" + userId + " order by er.reimb_id desc;";
+					+ " from ers_reimbursement er";
+			//view All Reimbursement
+			if(userId == 0) {
+				sql += " where er.reimb_status_id=" + statusId + " order by er.reimb_id desc;";
+			}
+			//view Assigned Reimbursement
+			else {	
+				sql += " where er.reimb_status_id=" + statusId + " and er.reimb_resolver=" + userId + " order by er.reimb_id desc;";
+			}
+			
+					
 			
 			PreparedStatement getReimburse = conn.prepareStatement(sql);
 			

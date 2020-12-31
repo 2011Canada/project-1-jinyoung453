@@ -14,6 +14,10 @@ public class ReimbServiceImplementation implements ReimbService {
 		this.rd = rd;
 	}
 	
+	public List<Reimburse> getAllReimburse() {
+		return rd.findAllReimburse();
+	}
+	
 	public List<Reimburse> getAllReimburse(int resolverId) {
 		return rd.findAllReimburse(resolverId);
 	}

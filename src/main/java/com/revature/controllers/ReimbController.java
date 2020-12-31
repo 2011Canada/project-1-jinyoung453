@@ -23,6 +23,14 @@ public class ReimbController {
 	
 	private ObjectMapper om = new ObjectMapper();
 
+	public void findAllReimbursement(HttpServletRequest req, HttpServletResponse res) throws IOException {
+
+		List<Reimburse> allReimburse = rs.getAllReimburse();
+		res.setStatus(200);
+		res.getWriter().write(om.writeValueAsString(allReimburse));
+		
+	}
+	
 	public void findAllReimbursement(HttpServletRequest req, HttpServletResponse res, int resolverId) throws IOException {
 
 		List<Reimburse> allReimburse = rs.getAllReimburse(resolverId);

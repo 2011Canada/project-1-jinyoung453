@@ -14,10 +14,11 @@
     <nav class="navbar navbar-inverse navbar fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a id="financeHome" class="navbar-brand" href="fmMain.html"> FINANCE MANAGER </a>
+          <a id="financeHome" class="navbar-brand" href="fmMain.html"> MANAGER </a>
         </div>
         <ul class="nav navbar-nav">
             <li id="viewReimbursement"><a href="viewReimbursement.html">View Reimbursement</a></li>
+            <li id="viewAllReimbursement"><a href="viewAllReimbursement.html" >View All Reimbursement</a></li>
             <li id="approval"><a href="#">Approval</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -25,8 +26,13 @@
         </ul>
       </div>
     </nav>
+    <span> APPROVAL:</span> 
+    <select id="status" onchange=OnChangeAuth(this)>
+        <option value="0" selected>Assigned</option>
+        <option value="1">All</option>
+    </select>
     <div id="fmBody"></div>
     <script src="financeManager.js"></script>
   </body>
-
+  <div class="fixed-bottom">Copyright &copy; Project1 2020 </div>
 </html>

@@ -117,7 +117,22 @@ public class FrontController extends HttpServlet {
 					res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
 				default:
 					res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+				}
 			}
+			else if(req.getRequestURI().substring(req.getContextPath().length(), req.getRequestURI().length()-2).equalsIgnoreCase("/approver")) {
+				switch (req.getMethod()) {
+					case "GET":
+						userController.findApprover(req, res, Integer.parseInt(value));
+						break;
+					case "POST":
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+					case "PUT":
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+					case "DELETE":
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+					default:
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+				}
 			}
 		}else {
 			switch (URI) {
@@ -153,22 +168,22 @@ public class FrontController extends HttpServlet {
 				}
 				break;
 			}
-//			case "/allReimb": {
-//				switch (req.getMethod()) {
-//					case "GET":
-//						reimbController.findAllReimbursement(req, res);
-//						break;
-//					case "POST":
-//						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-//					case "PUT":
-//						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-//					case "DELETE":
-//						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-//					default:
-//						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-//				}
-//				break;
-//			}
+			case "/allReimb": {
+				switch (req.getMethod()) {
+					case "GET":
+						reimbController.findAllReimbursement(req, res);
+						break;
+					case "POST":
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+					case "PUT":
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+					case "DELETE":
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+					default:
+						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
+				}
+				break;
+			}
 			case "/register" : {
 				switch (req.getMethod()) {
 				case "GET":
@@ -188,22 +203,7 @@ public class FrontController extends HttpServlet {
 				}
 				break;
 			}
-			case "/approver": {
-				switch (req.getMethod()) {
-					case "GET":
-						userController.findAllApprovers(req, res);
-						break;
-					case "POST":
-						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-					case "PUT":
-						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-					case "DELETE":
-						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-					default:
-						res.setStatus(400);	res.getWriter().write("Method Not Supported");	break;
-				}
-				break;
-			}
+			
 			case "/newReimb" : {
 				switch (req.getMethod()) {
 				case "GET":

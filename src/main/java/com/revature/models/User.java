@@ -16,6 +16,29 @@ public class User {
 	
 	private int roleId;
 	
+	private int departmentId;
+	
+	public int getDepartmentId() {
+		return departmentId;
+	}
+
+	public User(int userId, String username, String password, String firstName, String lastName, String email,
+			int roleId, int departmentId) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.roleId = roleId;
+		this.departmentId = departmentId;
+	}
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -91,8 +114,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", roleId=" + roleId + ", userId=" + userId + "]";
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", email=" + email + ", roleId=" + roleId + ", department="
+				+ departmentId + "]";
 	}
 
 	@Override

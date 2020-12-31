@@ -31,7 +31,7 @@ public class UserServiceImplementation implements UserService {
 		ud.createUser(user);
 	}
 	
-	public List<FinanceManager> getAllApprovers(){
-		return ud.findAllFinanceManagers();
+	public List<FinanceManager> getApprover(int departmentId){
+		return ud.findFinanceManager(departmentId);
 	}
 }

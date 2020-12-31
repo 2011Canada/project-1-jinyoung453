@@ -10,15 +10,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
-  <body onload="viewReimbursement()">
+  <body onload="viewAllReimbursement()">
     <nav class="navbar navbar-inverse navbar fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a id="financeHome" class="navbar-brand" href="fmMain.html"> MANAGER </a>
         </div>
         <ul class="nav navbar-nav">
-          <li id="viewReimbursement"><a href="#">View Reimbursement</a></li>
-          <li id="viewAllReimbursement"><a href="viewAllReimbursement.html" >View All Reimbursement</a></li>
+          <li id="viewReimbursement"><a href="viewReimbursement.html" >View Reimbursement</a></li>
+          <li id="viewAllReimbursement"><a href="#" >View All Reimbursement</a></li>
           <li id="approval"><a href="approval.html">Approval</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -27,7 +27,7 @@
       </div>
     </nav>
     <span> STATUS:</span> 
-    <select id="status" onchange=OnSelectionChange(this)>
+    <select id="status" onchange=OnSelectionChange_All(this)>
         <option value="0" selected>All</option>
         <option id="pending" value="1">Pending</option>
         <option id="approved" value="2">Approved</option>

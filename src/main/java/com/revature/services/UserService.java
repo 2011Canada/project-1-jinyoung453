@@ -13,5 +13,5 @@ public interface UserService {
 	
 	public void create(User user);
 	
-	public List<FinanceManager> getAllApprovers();
+	public List<FinanceManager> getApprover(int departmentId);
 }

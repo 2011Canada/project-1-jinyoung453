@@ -13,5 +13,5 @@ public interface UserDao {
 	public User findUserByUsernameAndPassword(String userId, String password) throws UserNotFoundException, InternalErrorException;
 	public List<User> findAll();
 	public void createUser(User user);
-	public List<FinanceManager> findAllFinanceManagers();
+	public List<FinanceManager> findFinanceManager(int departmentId);
 }

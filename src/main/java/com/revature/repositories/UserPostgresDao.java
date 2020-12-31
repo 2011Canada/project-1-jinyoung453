@@ -38,6 +38,7 @@ public class UserPostgresDao implements UserDao {
 				//u.setPassword(res.getString("ERS_PASSWORD"));
 				u.setEmail(res.getString("USER_EMAIL"));
 				u.setRoleId(res.getInt("USER_ROLE_ID"));
+				u.setDepartmentId(res.getInt("USER_DEPARTMENT_ID"));
 				return u;
 			}else {
 				throw new UserNotFoundException();
@@ -68,6 +69,7 @@ public class UserPostgresDao implements UserDao {
 				//u.setPassword(res.getString("ERS_PASSWORD"));
 				u.setEmail(res.getString("USER_EMAIL"));
 				u.setRoleId(res.getInt("USER_ROLE_ID"));
+				u.setDepartmentId(res.getInt("USER_DEPARTMENT_ID"));
 				allUsers.add(u);
 			}
 			return allUsers;
@@ -84,8 +86,8 @@ public class UserPostgresDao implements UserDao {
 		try {
 			conn.setAutoCommit(false);
 			
-			String sql = "insert into ERS_USERS (ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME, USER_LAST_NAME, USER_EMAIL, USER_ROLE_ID) "
-						+ "values(?, PGP_SYM_ENCRYPT(?, 'AES_KEY'), ?, ?, ?, ?);";
+			String sql = "insert into ERS_USERS (ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME, USER_LAST_NAME, USER_EMAIL, USER_ROLE_ID, USER_DEPARTMENT_ID) "
+						+ "values(?, PGP_SYM_ENCRYPT(?, 'AES_KEY'), ?, ?, ?, ?, ?);";
 			
 			PreparedStatement insertUser = conn.prepareStatement(sql);
 			
@@ -95,6 +97,7 @@ public class UserPostgresDao implements UserDao {
 			insertUser.setString(4, user.getLastName());
 			insertUser.setString(5, user.getEmail());
 			insertUser.setInt(6, user.getRoleId());
+			insertUser.setInt(7, user.getDepartmentId());
 			
 			insertUser.executeUpdate();
 			
@@ -116,11 +119,11 @@ public class UserPostgresDao implements UserDao {
 		}
  	}
 	
-	public List<FinanceManager> findAllFinanceManagers(){
+	public List<FinanceManager> findFinanceManager(int departmentId){
 		Connection conn = cf.getConnection();
 		try {
 			String sql = "select ers_users_id as userId, user_first_name || '  ' || user_last_name as userName from ERS_USERS "
-					+ "where user_role_id = 1;";
+					+ "where user_role_id = 1 and user_department_id = "+departmentId+";";
 			PreparedStatement getFM = conn.prepareStatement(sql);
 			ResultSet res = getFM.executeQuery();
 			List<FinanceManager> allUsers = new ArrayList<FinanceManager>();

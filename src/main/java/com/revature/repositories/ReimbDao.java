@@ -8,6 +8,7 @@ import com.revature.models.User;
 
 public interface ReimbDao {
 
+	public List<Reimburse> findAllReimburse();
 	public List<Reimburse> findAllReimburse(int id);
 	public List<Reimburse> findReimburseByStatus(int id);
 	public List<Reimburse> findReimburseByUserId(int id);

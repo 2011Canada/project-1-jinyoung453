@@ -11,13 +11,15 @@ function empHome(){
     }else{
         roleName = "Employee"
     }
-    var empInfo  = " User ID: " + userInfo.username + "<br>"
-                 + " First Name: " + userInfo.firstName + "<br>"
-                 + " Last Name: " + userInfo.lastName + "<br>"
-                 + " Email: " + userInfo.email + "<br>"
-                 + " Position: " + roleName + "<br>";
+    document.getElementById('yourName').innerHTML = "  "+ userInfo.firstName + " " + userInfo.lastName;
+
+    // var empInfo  = " User ID: " + userInfo.username + "<br>"
+    //              + " First Name: " + userInfo.firstName + "<br>"
+    //              + " Last Name: " + userInfo.lastName + "<br>"
+    //              + " Email: " + userInfo.email + "<br>"
+    //              + " Position: " + roleName + "<br>";
     
-    document.getElementById('empBody').innerHTML = empInfo;
+    // document.getElementById('empBody').innerHTML = empInfo;
 }
 
 async function viewHistory(){
@@ -73,7 +75,7 @@ async function viewHistory(){
 async function OnSelectionChange(opt){
 
     if(opt.value == 0){
-        viewReimbursement()
+        viewHistory()
     }else{
         try{
              fetch("http://localhost:8080/Project1/viewHistoryBy/" +userInfo.userId +opt.value)
@@ -131,10 +133,10 @@ function newReimbursement(e){
     let amount = document.getElementById("amount").value;
     let desc = document.getElementById("description").value;
     let author = userInfo.userId; //UserId
-    let resolver = document.getElementById("approver").value;
+    let resolver = document.getElementById("resolver").value;
     let type = document.getElementById("type").value;
     let receipt= document.getElementById("file").value;
-    
+
     const reimb = {
         amount, desc, author, resolver, type, receipt
    }
@@ -148,7 +150,7 @@ function newReimbursement(e){
             }
        })
     alert("NEW REIMBURSEMENT WAS SUCCESSFULLY SUBMITTED")    
-    location.href='history.html'
+    window.location.href='./history.html'
 
     }catch(e){
          console.log(e);
@@ -158,13 +160,14 @@ function newReimbursement(e){
 function approverList(){
     try{
         var optionList = ""
-        fetch("http://localhost:8080/Project1/approver")
+        fetch("http://localhost:8080/Project1/approver/"+ userInfo.departmentId)
             .then(response => {return response.json()})
             .then(data =>{
-                for(let x = 0;x<data.length;x++){
-                    optionList += "<option value=\'"+ data[x].userId +"\'>"+ data[x].userName+"</option>"
-                }
-                document.getElementById('approver').innerHTML = optionList;
+                //for(let x = 0;x<data.length;x++){
+                    optionList += "<input type=\"hidden\" id=\"resolver\" name=\"resolver\" value=\'"+ data[0].userId +"\'>"
+                    optionList += "<div style=\"font-size: 16px; font-weight:lighter; width:200px\">"+ data[0].userName+"</div>"
+                //}
+               document.getElementById('approverDiv').innerHTML = optionList;
             })
     }catch(e){
         console.log(e)

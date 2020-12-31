@@ -54,11 +54,11 @@ public class UserController {
 	}
 	
 
-	public void findAllApprovers(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void findApprover(HttpServletRequest req, HttpServletResponse res, int departmentId) throws IOException {
 
-		List<FinanceManager> allApprovers = us.getAllApprovers();
+		List<FinanceManager> approver = us.getApprover(departmentId);
 		res.setStatus(200);
-		res.getWriter().write(om.writeValueAsString(allApprovers));
+		res.getWriter().write(om.writeValueAsString(approver));
 		
 	}
 	
