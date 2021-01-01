@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -41,14 +42,15 @@ public class UserController {
 		
 	}
 	
-	public void createAccount(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void createAccount(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		
 		try{
 			ObjectMapper om = new ObjectMapper();
 			User user = om.readValue(req.getInputStream(), User.class);
 			us.create(user);
 			res.setStatus(200);
-			System.out.println("USER IS CREATED: " + user.toString());
+			
+			//System.out.println("USER IS CREATED: " + user.toString());
 		}catch(IOException e){
 		}
 	}

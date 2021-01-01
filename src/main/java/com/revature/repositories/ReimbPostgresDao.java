@@ -27,7 +27,7 @@ public class ReimbPostgresDao implements ReimbDao {
 					+ "(select eu.user_first_name || '  ' || eu.user_last_name from ers_users eu where er.reimb_resolver = eu.ers_users_id) as REIMB_RESOLVER_NAME,"
 					+ "(select ert.reimb_type from ers_reimbursement_type ert where er.reimb_type_id = ert.reimb_type_id) as REIMB_TYPE,"
 					+ "(select ers.reimb_status from ers_reimbursement_status ers where er.reimb_status_id = ers.reimb_status_id) as REIMB_STATUS"
-					+ " from ers_reimbursement er order by er.reimb_id desc;";
+					+ " from ers_reimbursement er order by er.reimb_submitted desc;";
 			
 			PreparedStatement getReimburse = conn.prepareStatement(sql);
 			
@@ -74,7 +74,7 @@ public class ReimbPostgresDao implements ReimbDao {
 					+ "(select eu.user_first_name || '  ' || eu.user_last_name from ers_users eu where er.reimb_resolver = eu.ers_users_id) as REIMB_RESOLVER_NAME,"
 					+ "(select ert.reimb_type from ers_reimbursement_type ert where er.reimb_type_id = ert.reimb_type_id) as REIMB_TYPE,"
 					+ "(select ers.reimb_status from ers_reimbursement_status ers where er.reimb_status_id = ers.reimb_status_id) as REIMB_STATUS"
-					+ " from ers_reimbursement er where er.reimb_resolver = " + id + " order by er.reimb_id desc;";
+					+ " from ers_reimbursement er where er.reimb_resolver = " + id + " order by er.reimb_submitted desc;";
 			
 			PreparedStatement getReimburse = conn.prepareStatement(sql);
 			
@@ -127,11 +127,11 @@ public class ReimbPostgresDao implements ReimbDao {
 					+ " from ers_reimbursement er";
 			//view All Reimbursement
 			if(userId == 0) {
-				sql += " where er.reimb_status_id=" + statusId + " order by er.reimb_id desc;";
+				sql += " where er.reimb_status_id=" + statusId + " order by er.reimb_submitted desc;";
 			}
 			//view Assigned Reimbursement
 			else {	
-				sql += " where er.reimb_status_id=" + statusId + " and er.reimb_resolver=" + userId + " order by er.reimb_id desc;";
+				sql += " where er.reimb_status_id=" + statusId + " and er.reimb_resolver=" + userId + " order by er.reimb_submitted desc;";
 			}
 			
 					
@@ -185,7 +185,7 @@ public class ReimbPostgresDao implements ReimbDao {
 					+ "(select ert.reimb_type from ers_reimbursement_type ert where er.reimb_type_id = ert.reimb_type_id) as REIMB_TYPE,"
 					+ "(select ers.reimb_status from ers_reimbursement_status ers where er.reimb_status_id = ers.reimb_status_id) as REIMB_STATUS"
 					+ " from ers_reimbursement er"
-					+ " where er.reimb_status_id=" + statusId + " and er.reimb_author=" + userId + " order by er.reimb_id desc;";
+					+ " where er.reimb_status_id=" + statusId + " and er.reimb_author=" + userId + " order by er.reimb_submitted desc;";
 			
 			PreparedStatement getReimburse = conn.prepareStatement(sql);
 			
@@ -232,7 +232,7 @@ public class ReimbPostgresDao implements ReimbDao {
 					+ "(select ert.reimb_type from ers_reimbursement_type ert where er.reimb_type_id = ert.reimb_type_id) as REIMB_TYPE,"
 					+ "(select ers.reimb_status from ers_reimbursement_status ers where er.reimb_status_id = ers.reimb_status_id) as REIMB_STATUS"
 					+ " from ers_reimbursement er"
-					+ " where er.reimb_author=" + userId + " order by er.reimb_id desc;";
+					+ " where er.reimb_author=" + userId + " order by er.reimb_submitted desc;";
 			
 			PreparedStatement getReimburse = conn.prepareStatement(sql);
 			

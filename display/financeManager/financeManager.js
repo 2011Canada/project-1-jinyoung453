@@ -37,7 +37,8 @@ async function viewReimbursement(){
                 //ID/AUTHOR/AMOUNT/TYPE/SUBMIT(date)/APPROVE(date)/DESCRIPTION/STATUS
                 if(data.length != 0){
                     var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                    + "<th scope=\"col\">ID</th><th scope=\"col\">APPLICANT</th>"
+                    //+ "<th scope=\"col\">ID</th>"
+                    + "<th scope=\"col\">APPLICANT</th>"
                     + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th><th scope=\"col\">DESCRIPTION</th>"
                     + "<th scope=\"col\">RECEIPT</th><th scope=\"col\">SUBMITTED DATE</th>"
                     + "<th scope=\"col\">APPROVED DATE</th>"
@@ -56,7 +57,8 @@ async function viewReimbursement(){
                         if(data[x].approve == null){  data[x].approve = '-' }
                         else{ data[x].approve = data[x].approve.substring(0,19)}
     
-                        newTable += "<tr><td>" + data[x].id + "</td><td>" + data[x].authorName +"</td>"
+                        newTable += "<tr>"//<td>" + data[x].id + "</td>
+                                + "<td>" + data[x].authorName +"</td>"
                                 + "<td>$" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                 + "<td>" + data[x].desc + "</td><td>" + data[x].receipt + "</td>"
                                 + "<td>" + data[x].submit + "</td><td>" + data[x].approve +"</td>"
@@ -89,7 +91,8 @@ async function viewReimbursement(){
                 //ID/AUTHOR/AMOUNT/TYPE/SUBMIT(date)/APPROVE(date)/DESCRIPTION/STATUS
                 if(data.length != 0){
                     var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                    + "<th scope=\"col\">ID</th><th scope=\"col\">APPLICANT</th>"
+                    //+ "<th scope=\"col\">ID</th>"
+                    + "<th scope=\"col\">APPLICANT</th>"
                     + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th><th scope=\"col\">DESCRIPTION</th>"
                     + "<th scope=\"col\">RECEIPT</th><th scope=\"col\">SUBMITTED DATE</th>"
                     + "<th scope=\"col\">APPROVED DATE</th><th scope=\"col\">APPROVAL</th>"
@@ -108,7 +111,8 @@ async function viewReimbursement(){
                         if(data[x].approve == null){  data[x].approve = '-' }
                         else{ data[x].approve = data[x].approve.substring(0,19)}
     
-                        newTable += "<tr><td>" + data[x].id + "</td><td>" + data[x].authorName +"</td>"
+                        newTable += "<tr>"//<td>" + data[x].id + "</td>"
+                                + "<td>" + data[x].authorName +"</td>"
                                 + "<td>$" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                 + "<td>" + data[x].desc + "</td><td>" + data[x].receipt + "</td>"
                                 + "<td>" + data[x].submit + "</td><td>" + data[x].approve +"</td>"
@@ -143,7 +147,8 @@ async function OnSelectionChange(opt){
                     //ID/AUTHOR/AMOUNT/TYPE/SUBMIT(date)/APPROVE(date)/DESCRIPTION/STATUS/RESOLVER
                 if(data.length !=0){
                     var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                    + "<th scope=\"col\">ID</th><th scope=\"col\">APPLICANT</th>"
+                    //+ "<th scope=\"col\">ID</th>"
+                    + "<th scope=\"col\">APPLICANT</th>"
                     + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th><th scope=\"col\">DESCRIPTION</th>"
                     + "<th scope=\"col\">RECEIPT</th><th scope=\"col\">SUBMITTED DATE</th>"
                     + "<th scope=\"col\">APPROVED DATE</th>"
@@ -162,7 +167,8 @@ async function OnSelectionChange(opt){
                         if(data[x].approve == null){  data[x].approve = '-' }
                         else{ data[x].approve = data[x].approve.substring(0,19)}
 
-                        newTable += "<tr><td>" + data[x].id + "</td><td>" + data[x].authorName +"</td>"
+                        newTable += "<tr>"//<td>" + data[x].id + "</td>"
+                                + "<td>" + data[x].authorName +"</td>"
                                 + "<td>$" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                 + "<td>" + data[x].desc + "</td><td>" + data[x].receipt + "</td>"
                                 + "<td>" + data[x].submit + "</td><td>" + data[x].approve +"</td>"
@@ -196,7 +202,8 @@ async function OnSelectionChange_All(opt){
                         //ID/AUTHOR/AMOUNT/TYPE/SUBMIT(date)/APPROVE(date)/DESCRIPTION/STATUS/RESOLVER
                     if(data.length !=0){
                         var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                        + "<th scope=\"col\">ID</th><th scope=\"col\">APPLICANT</th>"
+                        //+ "<th scope=\"col\">ID</th>"
+                        + "<th scope=\"col\">APPLICANT</th>"
                         + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th><th scope=\"col\">DESCRIPTION</th>"
                         + "<th scope=\"col\">RECEIPT</th><th scope=\"col\">SUBMITTED DATE</th>"
                         + "<th scope=\"col\">APPROVED DATE</th><th scope=\"col\">APPROVAL</th>"
@@ -215,7 +222,8 @@ async function OnSelectionChange_All(opt){
                             if(data[x].approve == null){  data[x].approve = '-' }
                             else{ data[x].approve = data[x].approve.substring(0,19)}
     
-                            newTable += "<tr><td>" + data[x].id + "</td><td>" + data[x].authorName +"</td>"
+                            newTable += "<tr>" // <td>" + data[x].id + "</td>"
+                                    + "<td>" + data[x].authorName +"</td>"
                                     + "<td>$" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                     + "<td>" + data[x].desc + "</td><td>" + data[x].receipt + "</td>"
                                     + "<td>" + data[x].submit + "</td><td>" + data[x].approve +"</td>"
@@ -263,7 +271,8 @@ async function viewPendingList(id){
             
                 if(data.length !=0){
                     var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                    + "<th scope=\"col\">ID</th><th scope=\"col\">APPLICANT</th>"
+                    //+ "<th scope=\"col\">ID</th>"
+                    + "<th scope=\"col\">APPLICANT</th>"
                     + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th><th scope=\"col\">DESCRIPTION</th>"
                     + "<th scope=\"col\">RECEIPT</th><th scope=\"col\">SUBMITTED DATE</th>"
                     + "<th scope=\"col\">STATUS</th><th scope=\"col\">APPROVER</th><th scope=\"col\">APPROVAL</th></tr></thead><tbody>"
@@ -275,11 +284,12 @@ async function viewPendingList(id){
                         if(data[x].submit == null){  data[x].submit = '-' }
                         else{ data[x].submit = data[x].submit.substring(0,19)}
                         
-                        newTable += "<tr><td>" + data[x].id + "</td><td>" + data[x].authorName +"</td>"
+                        newTable += "<tr>"//<td>" + data[x].id + "</td>"
+                                + "<td>" + data[x].authorName +"</td>"
                                 + "<td>$" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                 + "<td>" + data[x].desc + "</td><td>" + data[x].receipt + "</td>"
-                                + "<td>" + data[x].submit + "</td><td>" + data[x].statusName +"</td><td>" + data[x].resolverName + "</td>"
-                                + "<td id=\"row_"+ x + "\"><button onclick=\"approval("+ data[x].id + "," +2+","+x+")\" class=\"btn btn-lg btn-success\" style=\"font-size: 15px; font-weight: bold; margin-right:2vh; height:37px; width:80px; text-align:center; padding:0\">Approve</button>"
+                                + "<td>" + data[x].submit + "</td><td id=\"row_sts"+ x + "\">" + data[x].statusName +"</td><td>" + data[x].resolverName + "</td>"
+                                + "<td id=\"row_apv"+ x + "\"><button onclick=\"approval("+ data[x].id + "," +2+","+x+")\" class=\"btn btn-lg btn-success\" style=\"font-size: 15px; font-weight: bold; margin-right:2vh; height:37px; width:80px; text-align:center; padding:0\">Approve</button>"
                                 + "<button onclick=\"approval("+ data[x].id + "," +3+","+x+")\" class=\"btn btn-lg btn-danger\" style=\"font-size: 15px; font-weight: bold; height:37px; width:80px; text-align:center; padding:0\">Reject</button></td></span>"
                                 + "</tr>"
                     }
@@ -308,9 +318,11 @@ function approval(reimbId, statusId, rowNum){
             }
     })
     if(statusId == 2){ //Approve
-        document.getElementById('row_'+rowNum).innerHTML = "APPROVED";
+        document.getElementById('row_apv'+rowNum).innerHTML = "APPROVED";
+        document.getElementById('row_sts'+rowNum).innerHTML = "Approved";
     }else{ //Reject
-        document.getElementById('row_'+rowNum).innerHTML = "REJECTED";
+        document.getElementById('row_apv'+rowNum).innerHTML = "REJECTED";
+        document.getElementById('row_sts'+rowNum).innerHTML = "Rejected";
     }
 }
 

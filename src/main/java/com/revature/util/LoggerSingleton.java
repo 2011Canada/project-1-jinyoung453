@@ -5,10 +5,10 @@ import org.apache.logging.log4j.Logger;
 
 public class LoggerSingleton {
 	
-	private static Logger e720Logger = LogManager.getLogger("e720");
+	private static Logger project1Logger = LogManager.getLogger("proj1");
 	
 	public static Logger getLogger() {
-		return e720Logger;
+		return project1Logger;
 	}
 
 }

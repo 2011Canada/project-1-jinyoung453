@@ -29,7 +29,7 @@ async function viewHistory(){
     //alert("history")
     try{
         var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                    + "<th scope=\"col\">ID</th>"
+                    //+ "<th scope=\"col\">ID</th>"
                     + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th>"
                     + "<th scope=\"col\">DESCRIPTION</th>"
                     + "<th scope=\"col\">RECEIPT</th>"
@@ -55,7 +55,7 @@ async function viewHistory(){
                         if(data[x].approve == null){  data[x].approve = '-' }
                         else{ data[x].approve = data[x].approve.substring(0,19)}
 
-                        newTable += "<tr><td>" + data[x].id + "</td>"
+                        newTable += "<tr>"//<td>" + data[x].id + "</td>"
                                 + "<td> $" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                                 + "<td>" + data[x].desc + "</td><td>"+ data[x].receipt +"</td>"
                                 + "<td>" + data[x].submit + "</td><td>" + data[x].approve +"</td>"
@@ -86,7 +86,7 @@ async function OnSelectionChange(opt){
              .then(data =>{
                 if(data.length !=0){
                     var newTable = "<table class=\"table\"><thead  style=\"text-align:center;\"><tr>"
-                    + "<th scope=\"col\">ID</th>"
+                    //+ "<th scope=\"col\">ID</th>"
                     + "<th scope=\"col\">AMOUNT</th><th scope=\"col\">TYPE</th>"
                     + "<th scope=\"col\">DESCRIPTION</th>"
                     + "<th scope=\"col\">RECEIPT</th>"
@@ -108,7 +108,7 @@ async function OnSelectionChange(opt){
                         if(data[x].approve == null){  data[x].approve = '-' }
                         else{ data[x].approve = data[x].approve.substring(0,19)}
 
-                        newTable += "<tr><td>" + data[x].id + "</td>"
+                        newTable += "<tr>"//<td>" + data[x].id + "</td>"
                         + "<td> $" + data[x].amount + "</td><td>" + data[x].typeName +"</td>"
                         + "<td>" + data[x].desc + "</td><td>"+ data[x].receipt +"</td>"
                         + "<td>" + data[x].submit + "</td><td>" + data[x].approve +"</td>"
@@ -152,7 +152,7 @@ function newReimbursement(e){
                     "Content-Type" : "application/json"
                 }
         })
-        alert("NEW REIMBURSEMENT WAS SUCCESSFULLY SUBMITTED")    
+        //alert("NEW REIMBURSEMENT WAS SUCCESSFULLY SUBMITTED")    
         window.location.href='./history.html'
 
         }catch(e){
