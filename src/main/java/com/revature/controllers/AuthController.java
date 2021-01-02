@@ -23,13 +23,6 @@ public class AuthController {
 	public void userLogin(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		Credentials cred = om.readValue(req.getInputStream(), Credentials.class);
 		User u = us.login(cred.getUsername(), cred.getPassword());
-		//System.out.println(cred);
-		
-		/* I removed session 내맘이지*/
-		//use your session to keep track of your user permission level
-		//HttpSession sess = req.getSession();
-		//user.getRole
-		//sess.setAttribute("User-Role", "Admin");
 		
 		res.setStatus(200);
 		res.getWriter().write(om.writeValueAsString(u));

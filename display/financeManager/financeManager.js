@@ -7,6 +7,7 @@ document.getElementById('financeHome').addEventListener('click',financeHome)
 document.getElementById('viewReimbursement').addEventListener('click',viewReimbursement)
 document.getElementById('viewAllReimbursement').addEventListener('click',viewAllReimbursement)
 document.getElementById('approval').addEventListener('click',viewPendingList)
+document.getElementById('financeHome').innerHTML = userInfo.firstName + " " + userInfo.lastName;
 
 function financeHome(){
     if(userInfo == null)  location.href = '../login.html'
@@ -18,13 +19,7 @@ function financeHome(){
         roleName = "Employee"
     }
     document.getElementById('yourName').innerHTML = "  "+ userInfo.firstName + " " + userInfo.lastName;
-    /*var fmInfo  = " User ID: " + userInfo.username + "<br>"
-                    + " First Name: " + userInfo.firstName + "<br>"
-                    + " Last Name: " + userInfo.lastName + "<br>"
-                    + " Email: " + userInfo.email + "<br>"
-                    + " Position: " + roleName + "<br>";*/
     
-    // document.getElementById('fmBody').innerHTML = fmInfo;
 }
 async function viewReimbursement(){
     if(userInfo == null)  location.href = '../login.html'

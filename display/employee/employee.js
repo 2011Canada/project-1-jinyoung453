@@ -3,6 +3,7 @@ var userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
 
 document.getElementById('empHome').addEventListener('click',empHome)
 document.getElementById('history').addEventListener('click',viewHistory)
+document.getElementById('empHome').innerHTML = userInfo.firstName + " " + userInfo.lastName;
 
 function empHome(){
     if(userInfo == null)  location.href = '../login.html'
@@ -14,14 +15,12 @@ function empHome(){
         roleName = "Employee"
     }
     document.getElementById('yourName').innerHTML = "  "+ userInfo.firstName + " " + userInfo.lastName;
-
+    
     // var empInfo  = " User ID: " + userInfo.username + "<br>"
     //              + " First Name: " + userInfo.firstName + "<br>"
     //              + " Last Name: " + userInfo.lastName + "<br>"
     //              + " Email: " + userInfo.email + "<br>"
     //              + " Position: " + roleName + "<br>";
-    
-    // document.getElementById('empBody').innerHTML = empInfo;
 }
 
 async function viewHistory(){

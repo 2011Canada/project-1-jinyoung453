@@ -28,14 +28,6 @@ public class UserController {
 
 	public void findAllUsers(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
-//		YES!!!! I made it inactive!!! Let's see,  >> worked!!!!
-//		HttpSession sess = req.getSession();
-//		
-//		if(sess.getAttribute("User-Role") == null) {
-//			throw new UnauthenticatedException();
-//		} else if(!sess.getAttribute("User-Role").equals("Admin")) {
-//			throw new UnauthorizedException();
-//		}
 		List<User> allusers = us.getAllUsers();
 		res.setStatus(200);
 		res.getWriter().write(om.writeValueAsString(allusers));
@@ -63,5 +55,6 @@ public class UserController {
 		res.getWriter().write(om.writeValueAsString(approver));
 		
 	}
+	
 	
 }

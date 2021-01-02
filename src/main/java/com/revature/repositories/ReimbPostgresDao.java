@@ -116,7 +116,7 @@ public class ReimbPostgresDao implements ReimbDao {
 	public List<Reimburse> findReimburseByStatus(int complexId) {
 		int statusId = complexId % 10;
 		int userId = complexId / 10;
-		System.out.println("userId : " + userId);
+		//System.out.println("userId : " + userId);
 		Connection conn = cf.getConnection();
 		try {
 			String sql = "select er.*,"
