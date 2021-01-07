@@ -26,3 +26,5 @@ The Expense Reimbursement System (ERS) is to manage the process of expense reimb
 - Tomcat Server (Servlet technology)
 - FrontController
 
+### Entity Relationship Diagram
+![](ERD_diagram.JPG)
