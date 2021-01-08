@@ -20,11 +20,19 @@ The Expense Reimbursement System (ERS) is to manage the process of expense reimb
 
 
 ### Technical Requirements
+> [FrontEnd]
+- JavaScript
+- HTML
+- Bootstrap
+- Fetch API
+
+> [BackEnd]
 - JAVA
 - JDBC
 - PostgreSQL database
-- Tomcat Server (Servlet technology)
+- Tomcat Server (Servlet)
 - FrontController
+- CORS
 
 ### Entity Relationship Diagram
 ![](ERD_diagram.JPG)
