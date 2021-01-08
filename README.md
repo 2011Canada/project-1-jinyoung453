@@ -1,10 +1,10 @@
 # Expense Reimbursement System
 
-### Summary
-The Expense Reimbursement System (ERS) is to manage the process of expense reimbursement
+## Summary
+The Expense Reimbursement System (ERS) is to manage the process of expense reimbursement. It is required different functionalities by Finance Managers and Employees.
 
-### System Requirements
-> [Users]
+## System Requirements
+> [Employees]
 - can register
 - can login
 - can submit requests for reimbursement
@@ -19,7 +19,7 @@ The Expense Reimbursement System (ERS) is to manage the process of expense reimb
 - can approve and reject reimbursement requests
 
 
-### Technical Requirements
+## Technical Requirements
 > [FrontEnd]
 - JavaScript
 - HTML
@@ -34,5 +34,12 @@ The Expense Reimbursement System (ERS) is to manage the process of expense reimb
 - FrontController
 - CORS
 
-### Entity Relationship Diagram
+## Development Tool
+- Eclipse
+- Visual Studio Code
+- Postman
+- Amazon Web Service(AWS)
+- DBeaver
+
+## Entity Relationship Diagram
 ![](ERD_diagram.JPG)
