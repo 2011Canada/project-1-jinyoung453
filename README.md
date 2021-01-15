@@ -64,11 +64,12 @@ To-do list:
 
 > Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
 
+
+## Entity Relationship Diagram
+![](ERD_diagram.JPG)
+
+
 ## License
 
 This project uses the following license: [GNU GENERAL PUBLIC LICENSE](<https://www.gnu.org/licenses/gpl-3.0.en.html>).
 
-
-
-## Entity Relationship Diagram
-![](ERD_diagram.JPG)
