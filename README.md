@@ -57,12 +57,28 @@ To-do list:
 
 5. Open a browser(Chrome is recommended)
    - http://localhost:8080/Servlet/login.html
-![](LoginPage.JPG)
+
 
 
 ## Usage
 
-> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+- Users can reach to a Reimbursement System which can login
+![](LoginPage.JPG)
+
+- Users can register
+![](Register.JPG)
+
+- Employee can login
+- Employee can submit new reimbursement and view pending list
+![](EmployeeHome.JPG)
+
+- Finance Manager can login
+- Finance Manager can view reimbursememt lists assigned to them
+- Finance Manager can view all reimbursement lists regardless of approvers
+![](FinanceManagerHome.JPG)
+
+- Users can logout
+
 
 
 ## Entity Relationship Diagram
