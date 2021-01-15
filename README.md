@@ -57,7 +57,7 @@ To-do list:
 
 5. Open a browser(Chrome is recommended)
    - http://localhost:8080/Servlet/login.html
-
+![](LoginPage.JPG)
 
 
 ## Usage
