@@ -73,17 +73,9 @@ To-do list:
 
 - Employee can login
 - Employee can submit new reimbursement and view pending list
-
-![](EmployeeHome.png)
-
-
 - Finance Manager can login
 - Finance Manager can view reimbursememt lists assigned to them
 - Finance Manager can view all reimbursement lists regardless of approvers
-
-![](FinanceManagerHome.PNG)
-
-
 - Users can logout
 
 
