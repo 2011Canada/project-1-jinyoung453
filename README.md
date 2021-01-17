@@ -68,7 +68,7 @@ To-do list:
 
 
 - Users can register
-![](register.PNG)
+![](register.jpg)
 
 
 - Employee can login
