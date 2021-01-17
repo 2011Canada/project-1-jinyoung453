@@ -66,20 +66,23 @@ To-do list:
 
 ![](LoginPage.JPG)
 
-- Users can register
 
-![](Register.JPG)
+- Users can register
+![](register.PNG)
+
 
 - Employee can login
 - Employee can submit new reimbursement and view pending list
 
 ![](EmployeeHome.JPG)
 
+
 - Finance Manager can login
 - Finance Manager can view reimbursememt lists assigned to them
 - Finance Manager can view all reimbursement lists regardless of approvers
 
 ![](FinanceManagerHome.JPG)
+
 
 - Users can logout
 
